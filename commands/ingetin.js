@@ -12,7 +12,6 @@ module.exports = {
         } else {
             if (set[1].includes("s")) {
                 time = 1000 * parseInt(set[1].replace("s", ""));
-                msg.reply(`sekarang jam ${now}`)
             } else if (set[1].includes("m")) {
                 time = 1000 * 60 * parseInt(set[1].replace("m", ""));
             } else if (set[1].includes("h")) {
@@ -23,7 +22,11 @@ module.exports = {
 
 
             if (set[2]) {
-                msg.reply("oke.");
+                setTimeout(() => {
+                    msg.delete()
+                }, 5000);
+
+                msg.channel.send(`oke bang ${msg.author}, nanti gw ingetin.`);
                 setTimeout(() => {
                     msg.channel.send(`Bang ${msg.author}, ${set[2]}`);
                 }, time);

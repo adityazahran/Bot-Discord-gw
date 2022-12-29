@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'jadwal',
-    description: 'pengingat jadwal solat jumat',
+    name: 'absen',
+    description: 'pengingat absen solat jumat',
     execute(msg, args, client) {
         let d = new Date();
         let tanggal = d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })

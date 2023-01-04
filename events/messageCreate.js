@@ -22,8 +22,10 @@ module.exports = {
                 break;
         }
 
+
         // Pengecekan Prefix dan jumlah args dalam pesan
         let args = "";
+
         config.prefix.forEach((prefix) => {
             if (msg.content.startsWith(prefix)) {
                 args = msg.content.substring(prefix.length).split(" ");
@@ -31,6 +33,6 @@ module.exports = {
         });
 
         if (args == "") return;
-        commands.get(args[0]).execute(msg, args, client);
+        commands.get(args[0]).execute(msg, client, args);
     },
 };
